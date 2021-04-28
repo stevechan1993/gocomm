@@ -2,7 +2,7 @@ package mybeego
 
 import (
 	"fmt"
-	"github.com/astaxie/beego"
+	"github.com/beego/beego/v2/core/logs"
 )
 
 //type IMessage interface {
@@ -38,7 +38,7 @@ func NewMessage(code int) *Message {
 func NewErrMessage(code int, errMsg ...interface{}) *Message {
 	defer func() {
 		if p := recover(); p != nil {
-			beego.Error(p)
+			logs.Error(p)
 		}
 	}()
 	msg := NewMessage(code)

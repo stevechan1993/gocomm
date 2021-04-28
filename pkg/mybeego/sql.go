@@ -3,7 +3,7 @@ package mybeego
 import (
 	"bytes"
 	"fmt"
-	"github.com/astaxie/beego/orm"
+	"github.com/beego/beego/v2/client/orm"
 	"strings"
 )
 

@@ -6,13 +6,13 @@ import (
 	"github.com/stevechan1993/gocomm/pkg/log"
 	"strconv"
 
-	"github.com/astaxie/beego"
+	"github.com/beego/beego/v2/server/web"
 	"github.com/stevechan1993/gocomm/time"
 )
 
 // BaseController
 type BaseController struct {
-	beego.Controller
+	web.Controller
 	Query       map[string]string
 	JSONBody    map[string]interface{}
 	ByteBody    []byte
@@ -20,7 +20,7 @@ type BaseController struct {
 }
 
 func assertCompleteImplement() {
-	var _ beego.ControllerInterface = (*BaseController)(nil)
+	var _ web.ControllerInterface = (*BaseController)(nil)
 }
 
 func (this *BaseController) Options() {
@@ -46,7 +46,7 @@ func (this *BaseController) Prepare() {
 	}
 
 	this.Query = map[string]string{}
-	input := this.Input()
+	input,_ := this.Input()
 	for k := range input {
 		this.Query[k] = input.Get(k)
 	}

@@ -3,7 +3,7 @@ package websocket
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/astaxie/beego"
+	"github.com/beego/beego/v2/core/logs"
 	"github.com/gorilla/websocket"
 	"github.com/stevechan1993/gocomm/pkg/mybeego"
 	"reflect"
@@ -128,7 +128,7 @@ func SendDataByConnmgr(uid int64, appId int, sendMsg interface{}) bool {
 	}
 	msgByte, err := json.Marshal(msg)
 	if err != nil {
-		beego.Error(err)
+		logs.Error(err)
 		return false
 	}
 	key := fmt.Sprintf("%d:%d", uid, appId)

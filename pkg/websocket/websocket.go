@@ -3,7 +3,7 @@ package websocket
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/astaxie/beego"
+	"github.com/beego/beego/v2/core/logs"
 	"github.com/gorilla/websocket"
 	"github.com/stevechan1993/gocomm/pkg/mybeego"
 	"reflect"
@@ -73,12 +73,12 @@ func NewJMap(keyType, valueType reflect.Type) *JMap {
 }
 
 func (this *JMap) PrintConnectStatus() interface{} {
-	beego.Debug("PrintConnectStatus...")
-	beego.Info("============查看websocket连接状态begin============")
+	logs.Debug("PrintConnectStatus...")
+	logs.Info("============查看websocket连接状态begin============")
 	for i, v := range this.m {
-		beego.Info("key:", i, " conn:", v)
+		logs.Info("key:", i, " conn:", v)
 	}
-	beego.Info("============查看websocket连接状态end============")
+	logs.Info("============查看websocket连接状态end============")
 	return this.m
 }
 
@@ -110,7 +110,7 @@ func (this *JMap) Put(k interface{}, v interface{}) bool {
 		return false
 	}
 	if connI, ok := this.m[k]; ok {
-		beego.Debug("key:", k, "已经连接,先剔除下线")
+		logs.Debug("key:", k, "已经连接,先剔除下线")
 		if conn, ok := connI.(*WebsocketConnection); ok {
 			//conn.Conn.WriteMessage(websocket.TextMessage, []byte("您的帐号在其它地方登录,您被剔除下线"))
 			conn.Close()
@@ -172,7 +172,7 @@ func (c *WebsocketConnection) Send(msg string) {
 
 func (c *WebsocketConnection) Close() {
     c.OnceClose.Do(func(){
-		beego.Info("ws:close----uid:", c.Uid, "appid:", c.AppId, "state:", c.State ,"connmgr-id:",c.GetConnmgrId(c.Uid))
+		logs.Info("ws:close----uid:", c.Uid, "appid:", c.AppId, "state:", c.State ,"connmgr-id:",c.GetConnmgrId(c.Uid))
 		if c.State == Disconnected {
 			return
 		}
@@ -203,13 +203,13 @@ func doRead(c *WebsocketConnection) {
 		}
 		_, msg, err := c.Conn.ReadMessage()
 		if err != nil {
-			beego.Info(err)
+			logs.Info(err)
 			return
 		}
-		beego.Info(fmt.Sprintf("===>ws:recv msg from uid(%d) : %s", c.Uid, string(msg)))
+		logs.Info(fmt.Sprintf("===>ws:recv msg from uid(%d) : %s", c.Uid, string(msg)))
 		retMsg := c.OnReceive(msg)
 		retMsgByte, err := json.Marshal(retMsg)
-		beego.Info(fmt.Sprintf("<===ws:send to client uid(%d) : %s", c.Uid, string(retMsgByte)))
+		logs.Info(fmt.Sprintf("<===ws:send to client uid(%d) : %s", c.Uid, string(retMsgByte)))
 		c.Send(string(retMsgByte))
 	}
 }
@@ -217,7 +217,7 @@ func doRead(c *WebsocketConnection) {
 func doWrite(c *WebsocketConnection) {
 	defer func() {
 		if err := recover(); err != nil {
-			beego.Error("Recover in doWrite...uid:", c.Uid, "apid:", c.AppId, "err:", err)
+			logs.Error("Recover in doWrite...uid:", c.Uid, "apid:", c.AppId, "err:", err)
 		}
 	}()
 	defer func() {

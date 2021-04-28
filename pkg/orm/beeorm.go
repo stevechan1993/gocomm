@@ -1,7 +1,7 @@
 package orm
 
 import (
-	"github.com/astaxie/beego/orm"
+	"github.com/beego/beego/v2/client/orm"
 	"github.com/stevechan1993/gocomm/config"
 	"github.com/stevechan1993/gocomm/pkg/log"
 )

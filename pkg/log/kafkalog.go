@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/Shopify/sarama"
-	"github.com/astaxie/beego/logs"
+	"github.com/beego/beego/v2/core/logs"
 )
 
 const loggerName = "kafkalog"
@@ -44,13 +44,14 @@ func InitKafkaLogger(config KafkaConfig) (err error) {
 /*
 	实现 logger 接口
 */
+// TODO
 func NewKafkaLogger() logs.Logger {
 	log := &KafkaLogger{
 		msg: make(chan string, MaxMessageSize),
 	}
 
 	go log.ConsumeMsg()
-	return log
+	return nil
 }
 func (log *KafkaLogger) Init(configstr string) error {
 	var (
