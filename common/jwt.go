@@ -3,7 +3,7 @@ package common
 import (
 	"time"
 
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/pkg/log"
+	"github.com/stevechan1993/gocomm/pkg/log"
 
 	"github.com/dgrijalva/jwt-go"
 )

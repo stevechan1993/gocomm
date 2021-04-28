@@ -3,7 +3,7 @@ package broker
 import (
 	"fmt"
 	"github.com/Shopify/sarama"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/pkg/log"
+	"github.com/stevechan1993/gocomm/pkg/log"
 	"testing"
 	"time"
 )

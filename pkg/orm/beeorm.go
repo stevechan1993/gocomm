@@ -2,8 +2,8 @@ package orm
 
 import (
 	"github.com/astaxie/beego/orm"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/config"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/pkg/log"
+	"github.com/stevechan1993/gocomm/config"
+	"github.com/stevechan1993/gocomm/pkg/log"
 )
 
 func NewBeeormEngine(conf config.Mysql) {

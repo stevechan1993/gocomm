@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"time"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/pkg/log"
+	"github.com/stevechan1993/gocomm/pkg/log"
 )
 
 //获取当前时间字符串,格式:"20170420133114" (2017-04-20 13:3114)

@@ -2,7 +2,7 @@ package tracer
 
 import (
 	"fmt"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/common"
+	"github.com/stevechan1993/gocomm/common"
 	"net/http"
 
 	"github.com/opentracing-contrib/go-stdlib/nethttp"
@@ -12,7 +12,7 @@ import (
 	"github.com/uber/jaeger-lib/metrics"
 	"github.com/uber/jaeger-lib/metrics/metricstest"
 
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/pkg/log"
+	"github.com/stevechan1993/gocomm/pkg/log"
 )
 
 func Init(serviceName, addr string) (opentracing.Tracer, error) {

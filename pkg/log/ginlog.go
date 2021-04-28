@@ -3,7 +3,7 @@ package log
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/config"
+	"github.com/stevechan1993/gocomm/config"
 	"io"
 	"os"
 	"strings"

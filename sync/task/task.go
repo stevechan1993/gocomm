@@ -3,7 +3,7 @@ package task
 import (
 	"context"
 
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/sync/signal/semaphore"
+	"github.com/stevechan1993/gocomm/sync/signal/semaphore"
 )
 
 // OnSuccess executes g() after f() returns nil.

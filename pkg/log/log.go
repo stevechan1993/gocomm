@@ -1,6 +1,6 @@
 package log
 
-import "gitlab.fjmaimaimai.com/mmm-go/gocomm/config"
+import "github.com/stevechan1993/gocomm/config"
 
 type Log interface{
 	Debug(args ...interface{})

@@ -3,11 +3,11 @@ package mybeego
 import (
 	"encoding/json"
 	"fmt"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/pkg/log"
+	"github.com/stevechan1993/gocomm/pkg/log"
 	"strconv"
 
 	"github.com/astaxie/beego"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/time"
+	"github.com/stevechan1993/gocomm/time"
 )
 
 // BaseController

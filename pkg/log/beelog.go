@@ -3,7 +3,7 @@ package log
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/config"
+	"github.com/stevechan1993/gocomm/config"
 	"path/filepath"
 	"strconv"
 )

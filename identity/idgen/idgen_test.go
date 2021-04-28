@@ -1,8 +1,9 @@
 package idgen
 
 import (
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/pkg/log"
 	"testing"
+
+	"github.com/stevechan1993/gocomm/pkg/log"
 )
 
 func Test_Next(t *testing.T){

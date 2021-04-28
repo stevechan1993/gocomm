@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/gorilla/websocket"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/pkg/mybeego"
+	"github.com/stevechan1993/gocomm/pkg/mybeego"
 	"reflect"
 	"sync"
 )

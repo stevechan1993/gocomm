@@ -1,7 +1,7 @@
 package task
 
 import (
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/common"
+	"github.com/stevechan1993/gocomm/common"
 	"log"
 	"time"
 )

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gomodule/redigo/redis"
-	"gitlab.fjmaimaimai.com/mmm-go/gocomm/config"
+	"github.com/stevechan1993/gocomm/config"
 	"time"
 )
 
